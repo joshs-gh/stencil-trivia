@@ -11,6 +11,7 @@ export namespace Components {
         "question": string;
     }
     interface TriviaLoader {
+        "gsheeturl": string;
     }
 }
 declare global {
@@ -37,6 +38,7 @@ declare namespace LocalJSX {
         "question"?: string;
     }
     interface TriviaLoader {
+        "gsheeturl"?: string;
     }
     interface IntrinsicElements {
         "flash-card": FlashCard;

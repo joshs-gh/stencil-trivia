@@ -1,4 +1,4 @@
-import { Component, h, State } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'trivia-loader',
@@ -6,10 +6,11 @@ import { Component, h, State } from '@stencil/core';
   shadow: true,
 })
 export class TriviaLoader {
+  @Prop() gsheeturl: string;
   @State() gsheet: any;
 
   async componentWillLoad() {
-    await fetch('https://spreadsheets.google.com/feeds/cells/1uu8QEql61g8XKA2_U-ELpkhQNGNaYvqSvA5tsbBK3QQ/1/public/values?alt=json')
+    await fetch(this.gsheeturl)
       .then(async res => await res.text())
       .then(async data => await (this.gsheet = JSON.parse(data)));
     this.gsheet = this.gsheet.feed.entry;

@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+div.card {
+  width: 50%;
+  height: 200px;
+  background-color: lightgrey;
+  border-radius: 10px;
+  display: flex;
+  border: 20px;
+  border-color: black;
+  padding: 2px;
+  margin: 20px;
+}
+
+span {
+  margin: auto;
+  align-content: center;
+  font-size: x-large;
+  width: 80%;
+}

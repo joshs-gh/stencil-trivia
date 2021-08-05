@@ -28,7 +28,6 @@ export class TriviaLoader {
       .then(async res => await res.text())
       .then(async data => await (this.gsheet = JSON.parse(data)));
     this.gsheet = this.gsheet.feed.entry;
-    console.log(this.gsheet);
   }
 
   render() {

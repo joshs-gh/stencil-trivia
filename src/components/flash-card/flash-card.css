@@ -67,6 +67,11 @@ h1 {
   perspective: 1000px;
 }
 
+a {
+  border-style: hidden;
+  display: none;
+}
+
 .front,
 .back {
   /* background-image: url(https://stenciljs.com/assets/img/stenciljs-og.png?1); */
@@ -112,12 +117,14 @@ h1 {
   border-radius: 10px;
 }
 .container:hover .front,
-.container:hover .back {
+.container:hover a,
+.back {
   -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   -o-transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  display: block;
 }
 
 .back {

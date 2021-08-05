@@ -9,10 +9,14 @@ import Autolinker from 'autolinker';
 export class FlashCard {
   @Prop({ mutable: true }) question: string;
   @Prop({ mutable: true }) answer: string;
+  private linkedanswer: HTMLElement;
 
   componentWillLoad() {
-    this.answer = 'A: ' + this.answer; // Autolinker.link(this.answer);
     this.question = 'Q: ' + this.question;
+  }
+
+  componentDidLoad() {
+    this.linkedanswer.innerHTML = 'A: ' + Autolinker.link(this.answer);
   }
 
   render() {
@@ -28,7 +32,7 @@ export class FlashCard {
             </div>
             <div class="back">
               <div class="inner">
-                <p>{this.answer}</p>
+                <p ref={e => (this.linkedanswer = e as HTMLElement)}>{this.answer}</p>
               </div>
             </div>
           </div>
